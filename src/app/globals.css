@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.container{
+  @apply max-w-7xl mx-auto max-md:px-2.5
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
