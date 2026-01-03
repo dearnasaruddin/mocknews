@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,10 +14,16 @@ import Link from 'next/link'
 import { ModeToggle } from './ModeToggle'
 import { Button } from '../../ui/button'
 import { CgMenuRightAlt } from 'react-icons/cg'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
+  const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
   return (
-    <header className='shadow-md py-3 lg:py-4'>
+    <header className='bg-gray-50 dark:bg-gray-900 shadow-md py-3 lg:py-4 fixed z-50 w-full top-0 z-50'>
       <nav className='flex items-center justify-between container'>
         {/* =========== Logo =========== */}
         <div>
@@ -28,21 +35,26 @@ const Navbar = () => {
           <NavigationMenu className='hidden lg:flex' viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem className='flex items-center space-x-8'>
-                <NavigationMenuLink href='/news' className='hover:text-red-500'>News</NavigationMenuLink>
-
-                <NavigationMenuLink className='p-0' href='/services'>
-                  <NavigationMenuTrigger className='text-sm'>Services</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className='text-gray-600  rounded-md space-y-2'>
-                      <li><NavigationMenuLink href='/services/web' className='px-4'>Web Development</NavigationMenuLink></li>
-                      <li><NavigationMenuLink href='/services/apps' className='px-4'>Mobile App</NavigationMenuLink></li>
-                      <li><NavigationMenuLink href='/services/seo' className='px-4'>SEO</NavigationMenuLink></li>
-                    </ul>
-                  </NavigationMenuContent>
+                <NavigationMenuLink className={`${pathname == '/news' ? 'text-red-500' : 'hover:text-red-500'}`} asChild>
+                  <Link href='/news'>News</Link>
                 </NavigationMenuLink>
 
-                <NavigationMenuLink href='/about' className='hover:text-red-500'>About</NavigationMenuLink>
-                <NavigationMenuLink href='/contact' className='hover:text-red-500'>contact</NavigationMenuLink>
+                <NavigationMenuTrigger className={`${pathname == '/services' ? 'text-red-500' : 'hover:text-red-500'} text-sm`} >
+                  <Link href='/services'>Services</Link>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className='text-gray-600  rounded-md space-y-2'>
+                    <li><NavigationMenuLink href='/services/web' className='px-4'>Web Development</NavigationMenuLink></li>
+                    <li><NavigationMenuLink href='/services/apps' className='px-4'>Mobile App</NavigationMenuLink></li>
+                    <li><NavigationMenuLink href='/services/seo' className='px-4'>SEO</NavigationMenuLink></li>
+                    {/* <li><Link href='/services/web'>Web Development</Link></li>
+                    <li><Link href='/services/apps'>Mobile App</Link></li>
+                    <li><Link href='/services/seo'>SEO</Link></li> */}
+                  </ul>
+                </NavigationMenuContent>
+
+                <NavigationMenuLink className={`${pathname == '/about' ? 'text-red-500' : 'hover:text-red-500'}`} asChild><Link href='/about'>About</Link></NavigationMenuLink>
+                <NavigationMenuLink className={`${pathname == '/contact' ? 'text-red-500' : 'hover:text-red-500'}`} asChild><Link href='/contact'>contact</Link></NavigationMenuLink>
 
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -57,7 +69,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <div className='lg:hidden'>
-          <Button variant="ghost">
+          <Button onClick={toggleMenu} variant="ghost">
             <CgMenuRightAlt className=' size-6' />
           </Button>
         </div>

@@ -1,6 +1,13 @@
+import LatestNews from "@/components/shared/LatestNews";
+import Banner from "@/components/shared/navbar/Banner";
+import NewsLetter from "@/components/shared/NewsLetter";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div>Hello World!</div>
+    <div className="pt-12 dark:text-gray-300">
+      <Banner />
+      <LatestNews />
+      <NewsLetter />
+    </div>
   );
 }
