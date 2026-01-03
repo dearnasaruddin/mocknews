@@ -1,5 +1,6 @@
 import { NewsArticle } from "@/types/news"
-
+// 83cc2110024b4999b0befc0ecba343a5         api key of newsapi.org
+// pub_fdd36ba92f844bcba31bce981e13a1a7      api key of newsdata.io
 const newsData: NewsArticle[] = [
   {
     id: "news-001",

@@ -9,9 +9,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           {/* Logo and Description */}
           <div className="text-center md:text-left">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <Link href={'/'} className="text-2xl font-bold text-gray-900 dark:text-white">
               mock News
-            </h2>
+            </Link>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               Building a better digital experience for everyone.
             </p>

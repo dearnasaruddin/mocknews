@@ -7,7 +7,7 @@ const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
     const article = newsData.find((article) => article.id === id);
     return (
         <section className="pt-12">
-            <article className="max-w-4xl mx-auto p-6 shadow-md border rounded-lg flex flex-col justify-center items-center">
+            <article className="max-w-4xl mx-auto p-2 lg:p-6 shadow-md border rounded-lg flex flex-col justify-center items-center">
                 {article?.imageUrl && (
                     <div>
                         <Image
@@ -21,7 +21,7 @@ const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
                         />
                     </div>
                 )}
-                <div className="my-5 px-6">
+                <div className="my-5 px-2 lg:px-6">
                     <span className="bg-blue-100 text-blue-600 text-xs font-semibold mr-2 px-2.5 py-1 rounded"                    >
                         {article?.category}
                     </span>
@@ -31,7 +31,7 @@ const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
 
 
                 {/* Full Description */}
-                <div className="mt-6 px-6">
+                <div className="lg:mt-6 px-2 lg:px-6">
                     <p className="mb-4">{article?.content}</p>
                 </div>
             </article>
