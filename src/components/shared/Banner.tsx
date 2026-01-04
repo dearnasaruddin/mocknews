@@ -4,7 +4,7 @@ import newsData from '@/data/newsData'
 import Link from 'next/link'
 
 const Banner = () => {
-  const featuredArticle = newsData.find(article => article.id === "news-006"); // 
+  const featuredArticle = newsData.find(article => article.id === "news-007"); // 
   return (
     <div className='bg-slate-100 dark:bg-slate-900'>
       <div className='px-4  lg:px-8 py-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8'>

@@ -1,5 +1,5 @@
 import LatestNews from "@/components/shared/LatestNews";
-import Banner from "@/components/shared/navbar/Banner";
+import Banner from "@/components/shared/Banner";
 import NewsLetter from "@/components/shared/NewsLetter";
 
 export default async function Home() {
