@@ -61,8 +61,8 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-8 text-center md:flex md:justify-between md:items-center">
-          <p className="text-gray-600 dark:text-gray-400">
-            &copy; 2026 All rights reserved by <Link href="https://nasars-portfolio.vercel.app/" target='_blank'>Nasar</Link>
+          <p className="text-gray-600 dark:text-gray-400 group cursor-default select-none">
+            &copy; 2026 All rights reserved by <Link className='group-hover:text-[#fe3e57] duration-200' href="https://nasars-portfolio.vercel.app/" target='_blank'>Nasar</Link>
           </p>
 
           <Button variant="outline" className="mt-4 md:mt-0 dark:bg-gray-900 dark:text-white">

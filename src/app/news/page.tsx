@@ -12,9 +12,10 @@ const NewsPage = () => {
 
     const handleCategoryChange = (category: string) => {
         setSelectedCategory(category)
-
         if (category !== 'All') {
             setFilteredNews(newsData.filter(article => article.category === category))
+        }else{
+            setFilteredNews(newsData)
         }
     }
 
