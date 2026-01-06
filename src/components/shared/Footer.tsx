@@ -19,43 +19,43 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <div className="flex space-x-6 text-gray-600 dark:text-gray-400">
-            <a href="/about" className="hover:text-gray-900 dark:hover:text-white">
+            <Link href="/about" className="hover:text-gray-900 dark:hover:text-white">
               About Us
-            </a>
-            <a href="/services" className="hover:text-gray-900 dark:hover:text-white">
+            </Link>
+            <Link href="/services" className="hover:text-gray-900 dark:hover:text-white">
               Services
-            </a>
-            <a href="/contact" className="hover:text-gray-900 dark:hover:text-white">
+            </Link>
+            <Link href="/contact" className="hover:text-gray-900 dark:hover:text-white">
               Contact
-            </a>
-            <a href="/privacy" className="hover:text-gray-900 dark:hover:text-white">
+            </Link>
+            <Link href="/privacy" className="hover:text-gray-900 dark:hover:text-white">
               Privacy Policy
-            </a>
+            </Link>
           </div>
 
           {/* Social Media Icons */}
           <div className="flex space-x-4">
-            <a
+            <Link
               href="https://twitter.com"
               aria-label="Twitter"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <AiOutlineTwitter size={24} />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://instagram.com"
               aria-label="Instagram"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <AiOutlineInstagram size={24} />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://github.com"
               aria-label="Github"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <AiOutlineGithub size={24} />
-            </a>
+            </Link>
           </div>
         </div>
 

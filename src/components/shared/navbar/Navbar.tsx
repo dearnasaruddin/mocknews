@@ -39,7 +39,7 @@ const Navbar = () => {
                   <Link href='/news'>News</Link>
                 </NavigationMenuLink>
 
-                <NavigationMenuTrigger className={`${pathname == '/services' ? 'text-red-500' : 'hover:text-red-500'} text-sm`} >
+                <NavigationMenuTrigger className={`${pathname == '/services' ? 'text-red-500' : 'hover:text-red-500'} bg-transparent text-sm`} >
                   <Link href='/services'>Services</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -47,9 +47,6 @@ const Navbar = () => {
                     <li><NavigationMenuLink href='/services/web' className='px-4'>Web Development</NavigationMenuLink></li>
                     <li><NavigationMenuLink href='/services/apps' className='px-4'>Mobile App</NavigationMenuLink></li>
                     <li><NavigationMenuLink href='/services/seo' className='px-4'>SEO</NavigationMenuLink></li>
-                    {/* <li><Link href='/services/web'>Web Development</Link></li>
-                    <li><Link href='/services/apps'>Mobile App</Link></li>
-                    <li><Link href='/services/seo'>SEO</Link></li> */}
                   </ul>
                 </NavigationMenuContent>
 
