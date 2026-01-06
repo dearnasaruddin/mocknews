@@ -22,8 +22,8 @@ const Footer = () => {
             <Link href="/about" className="hover:text-gray-900 dark:hover:text-white">
               About Us
             </Link>
-            <Link href="/services" className="hover:text-gray-900 dark:hover:text-white">
-              Services
+            <Link href="/news" className="hover:text-gray-900 dark:hover:text-white">
+              All News
             </Link>
             <Link href="/contact" className="hover:text-gray-900 dark:hover:text-white">
               Contact
@@ -37,6 +37,7 @@ const Footer = () => {
           <div className="flex space-x-4">
             <Link
               href="https://twitter.com"
+              target='_blank'
               aria-label="Twitter"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
@@ -44,6 +45,7 @@ const Footer = () => {
             </Link>
             <Link
               href="https://instagram.com"
+              target='_blank'
               aria-label="Instagram"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
@@ -51,6 +53,7 @@ const Footer = () => {
             </Link>
             <Link
               href="https://github.com"
+              target='_blank'
               aria-label="Github"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
@@ -62,7 +65,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-8 text-center md:flex md:justify-between md:items-center">
           <p className="text-gray-600 dark:text-gray-400 group cursor-default select-none">
-            &copy; 2026 All rights reserved by <Link className='group-hover:text-[#fe3e57] duration-200' href="https://nasars-portfolio.vercel.app/" target='_blank'>Nasar</Link>
+            &copy; {new Date().getFullYear()} All rights reserved by <Link className='group-hover:text-[#fe3e57] duration-200' href="https://nasars-portfolio.vercel.app/" target='_blank'>Nasar</Link>
           </p>
 
           <Button variant="outline" className="mt-4 md:mt-0 dark:bg-gray-900 dark:text-white">

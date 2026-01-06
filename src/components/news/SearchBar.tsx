@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch }: { onSearch: (query: string) => void }) => {
     }
 
     return (
-        <div className='relative w-2/5'>
+        <div className='relative md:w-2/5'>
             <Input type="search" onChange={handleSearch} placeholder="Search news..." className="p-2.5 border rounded-md" />
             {!isSearching && <IoSearch className="absolute right-3 top-2.5" />}
         </div>

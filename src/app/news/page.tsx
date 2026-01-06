@@ -40,7 +40,7 @@ const NewsPage = () => {
     return (
         <div className='pt-12'>
             <h2 className='text-2xl font-bold mb-8'>Latest News</h2>
-            <div className='flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-12 mb-5'>
+            <div className='flex items-center justify-between gap-4 md:gap-12 mb-5'>
                 <SearchBar onSearch={handleSearch} />
                 <CategoryFilter onCategoryChange={handleCategoryChange} />
             </div>
