@@ -14,7 +14,7 @@ import Link from 'next/link'
 import { ModeToggle } from './ModeToggle'
 import { Button } from '../../ui/button'
 import { CgMenuRightAlt } from 'react-icons/cg'
-import { usePathname } from 'next/navigation'
+import { redirect, usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -22,6 +22,11 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
+
+  const handleLogin = () => {
+    redirect('/login')
+  }
+
   return (
     <header className='bg-gray-50 dark:bg-gray-900 shadow-md py-3 lg:py-4 fixed z-50 w-full top-0 z-50'>
       <nav className='flex items-center justify-between container'>
@@ -61,7 +66,7 @@ const Navbar = () => {
         {/* =========== Theme Switcher & Login Btn =========== */}
         <div className='hidden lg:flex items-center'>
           <ModeToggle />
-          <Button variant="default" className='ml-4'>Login</Button>
+          <Button onClick={handleLogin} variant="default" className='ml-4'>Login</Button>
         </div>
 
         {/* Mobile menu button */}

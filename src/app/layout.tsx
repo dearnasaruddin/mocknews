@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import {Toaster} from '@/components/ui/sonner'
 import "./globals.css";
 import Navbar from "@/components/shared/navbar/Navbar";
 import { ThemeProvider } from "@/components/shared/navbar/theme-provider";
@@ -35,6 +36,7 @@ export default function RootLayout({
           <main className="container pt-12 pb-10">
             {children}
           </main>
+          <Toaster position="top-center" richColors />
           <Footer/>
         </ThemeProvider>
       </body>
