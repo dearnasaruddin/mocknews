@@ -1,11 +1,18 @@
 'use client';
+import ForgotPassword from "@/components/shared/ForgotPassword";
 import { useState } from "react";
 import { toast } from "sonner"
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+
 const page = () => {
+
+    const [forgotPassPopUp, setForgotPassPopUp] = useState(false);
+
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -16,6 +23,15 @@ const page = () => {
         e.preventDefault();
         toast.warning("Invalid credentials!");
     }
+    const handleGoogleLogin = () => {
+        toast.info("Google login is not implemented yet.");
+    }
+    const handleAppleLogin = () => {
+        toast.info("Apple login is not implemented yet.");
+    }
+    const handleForgotPassPopUp = (value: boolean) => {
+        setForgotPassPopUp(value);
+    }
 
     return (
         <div className="min-h-[70vh] flex items-center justify-center px-4 ">
@@ -24,14 +40,14 @@ const page = () => {
                     Log in with
                 </h1>
 
-                {/* Social login */}
+                {/* =============== login with Google & Apple =============== */}
                 <div className="flex gap-3">
-                    <button onClick={handleLogin} type="button" className="flex w-1/2 items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium hover:scale-105 duration-200 cursor-pointer">
+                    <button onClick={handleGoogleLogin} type="button" className="flex w-1/2 items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium hover:scale-105 duration-200 cursor-pointer">
                         <FcGoogle />
                         Google
                     </button>
 
-                    <button onClick={handleLogin} type="button" className="flex w-1/2 items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium hover:scale-105 duration-200 cursor-pointer">
+                    <button onClick={handleAppleLogin} type="button" className="flex w-1/2 items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium hover:scale-105 duration-200 cursor-pointer">
                         <FaApple />
                         Apple
                     </button>
@@ -44,7 +60,7 @@ const page = () => {
                     <div className="h-px flex-1 bg-gray-200" />
                 </div>
 
-                {/* Form */}
+                {/* =============== Login Form =============== */}
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div>
                         <input
@@ -54,7 +70,7 @@ const page = () => {
                             onChange={(e) =>
                                 setFormData({ ...formData, email: e.target.value })
                             }
-                            className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20"
+                            className="w-full rounded-lg border border-gray-300 px-4 py-2"
                         />
                     </div>
 
@@ -66,7 +82,7 @@ const page = () => {
                             onChange={(e) =>
                                 setFormData({ ...formData, password: e.target.value })
                             }
-                            className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20"
+                            className="w-full rounded-lg border border-gray-300 px-4 py-2"
                         />
                         {
                             formData.password.length > 0 && (
@@ -83,22 +99,22 @@ const page = () => {
                     </div>
 
                     <div className="text-right">
-                        <Link href="#" target="_blank" className="text-sm text-violet-600 hover:underline">
+                        <p onClick={() => handleForgotPassPopUp(true)} className="text-sm text-gray-900 dark:text-gray-400 hover:underline cursor-pointer">
                             Forgot password?
-                        </Link>
+                        </p>
                     </div>
 
-                    <button
+                    <Button
                         type="submit"
-                        className="w-full rounded-lg bg-violet-600 py-2.5 font-medium text-white hover:bg-violet-700 transition cursor-pointer"
+                        className="w-full cursor-pointer"
                     >
                         Log In
-                    </button>
+                    </Button>
                 </form>
-
-                <p className="mt-6 text-center text-sm text-gray-600">
-                    Don&apos;t have an account?{" "}
-                    <Link href="/signup" className="font-medium text-violet-600 hover:underline">
+                {forgotPassPopUp && <ForgotPassword onClose={handleForgotPassPopUp} />}
+                <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+                    Don&apos;t have an account?
+                    <Link href="/signup" className="font-medium text-gray-900 dark:text-gray-400 hover:underline ml-2">
                         Sign up
                     </Link>
                 </p>
