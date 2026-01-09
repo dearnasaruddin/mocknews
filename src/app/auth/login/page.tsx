@@ -13,7 +13,10 @@ const page = () => {
 
     const [forgotPassPopUp, setForgotPassPopUp] = useState(false);
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<{
+        email: string;
+        password: string;
+    }>({
         email: "",
         password: "",
     });
