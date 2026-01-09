@@ -25,12 +25,12 @@ const ForgotPassword = ({ onClose }: { onClose: (value: boolean) => void }) => {
   }, [onClose]);
 
   return (
-    <div className='h-[70vh] absolute top-20 left-1/2 -translate-x-1/2 flex justify-center items-center'>
+    <div className='absolute top-1/2 left-1/2 -translate-1/2 z-10'>
       <div ref={popUpRef} className='p-5 bg-gray-100 dark:bg-slate-700 shadow-2xl rounded-md'>
         <IoMdCloseCircleOutline onClick={() => onClose(false)} className='ml-auto text-2xl text-gray-600 dark:text-gray-300 cursor-pointer' />
         <div className='p-4'>
           <h2 className='text-2xl font-semibold text-gray-900 dark:text-gray-200 text-center'>Reset Password</h2>
-          <p className='max-w-70 text-center mt-2 mb-4 text-gray-900 dark:text-gray-200'>Enter your email address to get reset password link.</p>
+          <p className='w-70 text-center mt-2 mb-4 text-gray-900 dark:text-gray-200'>Enter your email address to get reset password link.</p>
           <form onSubmit={handleResetPassword} className='space-y-4'>
             <div>
               <input

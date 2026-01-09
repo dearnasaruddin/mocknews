@@ -34,7 +34,7 @@ const page = () => {
     }
 
     return (
-        <div className="min-h-[70vh] flex items-center justify-center px-4 ">
+        <div className="min-h-[80vh] flex items-center justify-center px-4 ">
             <div className="w-full max-w-md rounded-2xl bg-slate-50 dark:bg-slate-900 p-8 shadow-lg">
                 <h1 className="mb-6 text-center text-2xl font-semibold text-gray-900 dark:text-gray-300 ">
                     Log in with
@@ -114,7 +114,7 @@ const page = () => {
                 {forgotPassPopUp && <ForgotPassword onClose={handleForgotPassPopUp} />}
                 <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
                     Don&apos;t have an account?
-                    <Link href="/signup" className="font-medium text-gray-900 dark:text-gray-400 hover:underline ml-2">
+                    <Link href="/auth/signup" className="font-medium text-gray-900 dark:text-gray-400 hover:underline ml-2">
                         Sign up
                     </Link>
                 </p>
