@@ -16,6 +16,7 @@ import { Button } from '../../ui/button'
 import { CgMenuRightAlt } from 'react-icons/cg'
 import { usePathname } from 'next/navigation'
 import { IoMdCloseCircleOutline } from 'react-icons/io'
+import newsData from "@/data/newsData"
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -36,6 +37,11 @@ const Navbar = () => {
     };
   }, []);
 
+  // ========== Categories List ===========
+  const categories = Array.from(new Set(newsData.map(article => article.category)))
+  useEffect(() => {
+    categories.unshift('All')
+  }, [])
 
   return (
     pathname.includes('/auth') ?
@@ -51,18 +57,23 @@ const Navbar = () => {
           <NavigationMenu className='hidden lg:flex' viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem className='lg:flex items-center space-x-8 max-md:space-y-2'>
-                <NavigationMenuLink className={`${pathname == '/news' ? 'text-red-500' : 'hover:text-red-500'}`} asChild>
+                <NavigationMenuLink className={`${pathname.includes('/news') ? 'text-red-500' : 'hover:text-red-500'}`} asChild>
                   <Link href='/news'>News</Link>
                 </NavigationMenuLink>
 
-                <NavigationMenuTrigger className={`${pathname == '/services' ? 'text-red-500' : 'hover:text-red-500'} bg-transparent text-sm`} >
-                  Services
+                <NavigationMenuTrigger className='hover:text-red-500 bg-transparent text-sm text-gray-900 dark:text-gray-100 font-normal' >
+                  Categories
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className='text-gray-600 dark:text-gray-300 rounded-md space-y-2'>
-                    <li><NavigationMenuLink href='/services/web' className='px-4'>Web Development</NavigationMenuLink></li>
-                    <li><NavigationMenuLink href='/services/apps' className='px-4'>Mobile App</NavigationMenuLink></li>
-                    <li><NavigationMenuLink href='/services/seo' className='px-4'>SEO</NavigationMenuLink></li>
+
+                <NavigationMenuContent className='px-0'>
+                  <ul className='text-gray-600 dark:text-gray-300 rounded-md'>
+
+                    {categories?.map((category) => (
+                      <li><NavigationMenuLink key={category}>
+                        <Link href={`/news/${category.toLowerCase()}`} className='px-4'>{category}</Link>
+                      </NavigationMenuLink></li>
+                    ))}
+
                   </ul>
                 </NavigationMenuContent>
 
@@ -86,14 +97,16 @@ const Navbar = () => {
                       <Link onClick={() => setIsMenuOpen(false)} href='/news'>News</Link>
                     </NavigationMenuLink>
 
-                    <NavigationMenuTrigger className={`${pathname == '/services' ? 'text-red-500' : 'hover:text-red-500'} bg-transparent text-sm`} >
-                      Services
+                    <NavigationMenuTrigger className='hover:text-red-500 bg-transparent text-sm text-gray-900 dark:text-gray-100 font-normal px-2'>
+                      Categories
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className='text-gray-600  rounded-md space-y-2'>
-                        <li><NavigationMenuLink href='/services/web' className='px-4'>Web Development</NavigationMenuLink></li>
-                        <li><NavigationMenuLink href='/services/apps' className='px-4'>Mobile App</NavigationMenuLink></li>
-                        <li><NavigationMenuLink href='/services/seo' className='px-4'>SEO</NavigationMenuLink></li>
+                      <ul className='text-gray-600'>
+                        {categories?.map((category) => (
+                          <li><NavigationMenuLink key={category}>
+                            <Link onClick={() => setIsMenuOpen(false)} href={`/news/${category.toLowerCase()}`} className='px-2'>{category}</Link>
+                          </NavigationMenuLink></li>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
 

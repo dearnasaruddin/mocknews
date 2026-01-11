@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const NewsCard = ({ article }: NewsCardProps) => {
   return (
-    <Link className='p-5 border rounded-lg shadow-md inline-block group dark:bg-slate-900' href={`/news/${article.id}`}>
+    <Link className='p-5 border rounded-lg shadow-md inline-block group dark:bg-slate-900' href={`/news/news-details/${article.id}`}>
       <div>
         <Image preload src={article.imageUrl} alt='news image' width={380} height={300} className='mb-5 md:h-56 rounded group-hover:scale-105 transition-all duration-200' />
       </div>
