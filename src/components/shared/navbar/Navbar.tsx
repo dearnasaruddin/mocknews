@@ -47,11 +47,11 @@ const Navbar = () => {
     pathname.includes('/auth') ?
       <></>
       :
-      <header className='bg-gray-50 dark:bg-gray-900 shadow-md py-3 lg:py-4 fixed w-full top-0 z-50'>
+      <header className='bg-gray-50 dark:bg-gray-900 shadow-md py-1.5 md:py-3 lg:py-4 fixed w-full top-0 z-50'>
         <nav className='flex items-center justify-between container'>
           {/* =========== Logo =========== */}
           <div>
-            <Link href={"/"} className='font-bold text-xl lg:text-2xl'>mock News</Link>
+            <Link href={"/"} className='font-bold text-2xl'>mock News</Link>
           </div>
           {/* ============= Desktop Navigation Menu Items ============= */}
           <NavigationMenu className='hidden lg:flex' viewport={false}>
@@ -101,7 +101,7 @@ const Navbar = () => {
                       Categories
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className='text-gray-600'>
+                      <ul className='text-gray-600 dark:text-gray-300'>
                         {categories?.map((category) => (
                           <li><NavigationMenuLink key={category}>
                             <Link onClick={() => setIsMenuOpen(false)} href={`/news/${category.toLowerCase()}`} className='px-2'>{category}</Link>
@@ -127,8 +127,8 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className='lg:hidden'>
-            <Button onClick={() => setIsMenuOpen(true)} variant="ghost">
-              <CgMenuRightAlt className=' size-6' />
+            <Button className='-mr-2.5' onClick={() => setIsMenuOpen(true)} variant="ghost">
+              <CgMenuRightAlt className='size-7' />
             </Button>
           </div>
         </nav>
