@@ -59,7 +59,7 @@ const Navbar = () => {
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className='text-gray-600  rounded-md space-y-2'>
+                  <ul className='text-gray-600 dark:text-gray-300 rounded-md space-y-2'>
                     <li><NavigationMenuLink href='/services/web' className='px-4'>Web Development</NavigationMenuLink></li>
                     <li><NavigationMenuLink href='/services/apps' className='px-4'>Mobile App</NavigationMenuLink></li>
                     <li><NavigationMenuLink href='/services/seo' className='px-4'>SEO</NavigationMenuLink></li>

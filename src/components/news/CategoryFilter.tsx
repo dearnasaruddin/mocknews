@@ -13,7 +13,7 @@ const CategoryFilter = ({ onCategoryChange }: { onCategoryChange: (category: str
         <div className="flex flex-wrap gap-2">
             <NativeSelect onChange={(e) => onCategoryChange(e.target.value)}>
                 {categories.map((category) => (
-                    <NativeSelectOption key={category} value={category}>
+                    <NativeSelectOption className="dark:bg-gray-800 dark:text-gray-300" key={category} value={category}>
                         {category}
                     </NativeSelectOption>
                 ))}
