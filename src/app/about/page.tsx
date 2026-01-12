@@ -3,7 +3,7 @@ import React from 'react'
 const AboutPage = () => {
   return (
     <div className="px-6 pt-12 pb-8">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl min-h-[80vh]">
         {/* Header */}
         <header className="mb-12 text-center">
           <h1 className="text-4xl dark:text-gray-300 font-bold mb-3">

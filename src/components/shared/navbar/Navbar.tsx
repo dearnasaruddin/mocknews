@@ -47,16 +47,16 @@ const Navbar = () => {
     pathname.includes('/auth') ?
       <></>
       :
-      <header className='bg-gray-50 dark:bg-gray-900 shadow-md py-1.5 md:py-3 lg:py-4 fixed w-full top-0 z-50'>
+      <header className='bg-gray-50 dark:bg-gray-900 shadow-md py-1.5 md:py-4 fixed w-full top-0 z-50'>
         <nav className='flex items-center justify-between container'>
           {/* =========== Logo =========== */}
           <div>
             <Link href={"/"} className='font-bold text-2xl'>mock News</Link>
           </div>
           {/* ============= Desktop Navigation Menu Items ============= */}
-          <NavigationMenu className='hidden lg:flex' viewport={false}>
+          <NavigationMenu className='hidden md:flex' viewport={false}>
             <NavigationMenuList>
-              <NavigationMenuItem className='lg:flex items-center space-x-8 max-md:space-y-2'>
+              <NavigationMenuItem className='md:flex items-center space-x-3 lg:space-x-8'>
                 <NavigationMenuLink className={`${pathname.includes('/news') ? 'text-red-500' : 'hover:text-red-500'}`} asChild>
                   <Link href='/news'>News</Link>
                 </NavigationMenuLink>
@@ -85,14 +85,14 @@ const Navbar = () => {
           </NavigationMenu>
 
           {/* =========== Navigation Menu =========== */}
-          <div ref={navMenuRef} className={` ${isMenuOpen ? ' max-md:right-0' : 'hidden max-md:-right-full'} lg:flex lg:items-center lg:justify-between lg:gap-6 duration-200  max-md:absolute max-md:top-0 max-md:w-[60vw] max-md:bg-gray-100 max-md:dark:bg-gray-800 max-md:shadow-2xl max-md:h-screen max-md:p-8 max-md:z-40`}>
-            <IoMdCloseCircleOutline onClick={() => setIsMenuOpen(false)} className='absolute top-5 right-5 text-2xl lg:hidden' />
+          <div ref={navMenuRef} className={` ${isMenuOpen ? 'max-md:right-0' : 'hidden max-md:-right-full'} md:flex md:items-center md:justify-between md:gap-6 duration-200  max-md:absolute max-md:top-0 max-md:w-[60vw] max-md:bg-gray-100 max-md:dark:bg-gray-800 max-md:shadow-2xl max-md:h-dvh max-md:p-8 max-md:z-40`}>
+            <IoMdCloseCircleOutline onClick={() => setIsMenuOpen(false)} className='absolute top-5 right-5 text-2xl md:hidden' />
 
             {/* ============ Mobile Navigation Menu Items =========== */}
-            <div className='lg:hidden max-md:mt-4'>
+            <div className='md:hidden max-md:mt-4'>
               <NavigationMenu viewport={false}>
                 <NavigationMenuList>
-                  <NavigationMenuItem className='lg:flex items-center space-x-8 max-md:space-y-2'>
+                  <NavigationMenuItem className='lg:flex items-center space-x-8 max-lg:space-y-2'>
                     <NavigationMenuLink className={`${pathname == '/news' ? 'text-red-500' : 'hover:text-red-500'}`} asChild>
                       <Link onClick={() => setIsMenuOpen(false)} href='/news'>News</Link>
                     </NavigationMenuLink>
@@ -126,7 +126,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className='lg:hidden'>
+          <div className='md:hidden'>
             <Button className='-mr-2.5' onClick={() => setIsMenuOpen(true)} variant="ghost">
               <CgMenuRightAlt className='size-7' />
             </Button>

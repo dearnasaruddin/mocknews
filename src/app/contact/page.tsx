@@ -4,7 +4,7 @@ import React from 'react'
 const ContactPage = () => {
   return (
     <div className="dark:text-gray-300 px-6 py-12">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl min-h-[80vh]">
         {/* Header */}
         <header className="mb-12 text-center">
           <h1 className="text-4xl font-bold mb-3">

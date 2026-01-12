@@ -12,19 +12,19 @@ const Footer = () => {
       :
     <footer className="bg-gray-100 dark:bg-gray-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* Logo and Description */}
           <div className="text-center md:text-left">
             <Link href={'/'} className="text-2xl font-bold text-gray-900 dark:text-white">
               mock News
             </Link>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
+            <p className="md:max-lg:max-w-60 mt-2 text-gray-600 dark:text-gray-400">
               Building a better digital experience for everyone.
             </p>
           </div>
 
           {/* Navigation Links */}
-          <div className="flex space-x-6 text-gray-600 dark:text-gray-400">
+          <div className="flex space-x-3 lg:space-x-6 text-gray-600 dark:text-gray-400">
             <Link href="/about" className="hover:text-gray-900 dark:hover:text-white">
               About Us
             </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-8 text-center md:flex md:justify-between md:items-center">
+        <div className="mt-4 md:mt-8 text-center md:flex md:justify-between md:items-center">
           <p className="text-gray-600 dark:text-gray-400 group cursor-default select-none">
             &copy; {new Date().getFullYear()} All rights reserved by <Link className='group-hover:text-[#fe3e57] duration-200' href="https://nasars-portfolio.vercel.app/" target='_blank'>Nasar</Link>
           </p>

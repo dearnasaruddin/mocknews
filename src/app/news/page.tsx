@@ -50,7 +50,7 @@ const NewsPage = ({ categoryFromSlug }: { categoryFromSlug: string }) => {
                 <h2 className='text-2xl font-bold mb-8'>Latest News</h2>
             }
             {!categoryFromSlug &&
-                <div className='flex items-center justify-between gap-4 md:gap-12 mb-5'>
+                <div className='flex items-center justify-between gap-4 lg:gap-12 mb-5'>
                     <SearchBar onSearch={handleSearch} />
                     <CategoryFilter onCategoryChange={handleCategoryChange} />
                 </div>
