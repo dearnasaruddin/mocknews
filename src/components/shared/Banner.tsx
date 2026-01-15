@@ -16,7 +16,7 @@ const Banner = () => {
           <h2 className='text-3xl font-bold'>{featuredArticle?.title}</h2>
           <p>{featuredArticle?.content.slice(0, 226)}</p>
           <p className='max-md:hidden'>{featuredArticle?.content.slice(226, 518)}</p>
-          <Link href={`/news/${featuredArticle?.id}`}><Button className='w-full cursor-pointer' variant='default'>Read More</Button></Link>
+          <Link href={`/news-details/${featuredArticle?.id}`}><Button className='w-full cursor-pointer' variant='default'>Read More</Button></Link>
         </div>
       </div>
     </div>
