@@ -1,9 +1,15 @@
-import React from 'react'
+import { Metadata } from "next"
+
+
+export const metadata:Metadata ={
+  title:"About",
+  description: "Mock News is a digital news platform built to deliver the latest stories across multiple domains. We focus on clarity, relevance, and accessibility, helping readers stay informed without unnecessary noise."
+}
 
 const AboutPage = () => {
   return (
     <div className="px-6 pt-12 pb-8">
-      <div className="mx-auto max-w-4xl min-h-[80vh]">
+      <div className="mx-auto max-w-4xl heightWithoutNavFooter">
         {/* Header */}
         <header className="mb-12 text-center">
           <h1 className="text-4xl dark:text-gray-300 font-bold mb-3">

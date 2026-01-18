@@ -17,7 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "mock News",
+  title: {
+    default: "Mock News",
+    template: "%s | Mock News"
+  },
   description: "A modern news website built with Next.js and Tailwind CSS.",
 };
 

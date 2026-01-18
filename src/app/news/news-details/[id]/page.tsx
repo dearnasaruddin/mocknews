@@ -1,8 +1,24 @@
 import newsData from '@/data/newsData';
+import { Metadata } from 'next';
 import Image from 'next/image';
-import React from 'react'
 
-const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
+type Props = {
+  params: { id: string }
+}
+
+// ============= Dynamic Metadata =============
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const id = (await params).id
+ 
+  const article = newsData.find((article) => article.id === id)
+ 
+  return {
+    title: article?.title,
+    description: article?.content,
+  }
+}
+
+const NewsDetailsPage = async ({ params }: Props) => {
     const { id } = await params;
     const article = newsData.find((article) => article.id === id);
     return (

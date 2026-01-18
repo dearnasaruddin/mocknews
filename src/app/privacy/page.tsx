@@ -1,4 +1,9 @@
-import React from 'react'
+import { Metadata } from "next"
+
+export const metadata:Metadata={
+  title: "Privacy Policy",
+  description: "At Mock News, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard data when you visit our website. This policy is provided for demonstration purposes."
+}
 
 const PrivacyPolicyPage = () => {
   return (

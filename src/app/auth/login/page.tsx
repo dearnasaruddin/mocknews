@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 
-const page = () => {
+const LoginPage = () => {
 
     const [forgotPassPopUp, setForgotPassPopUp] = useState(false);
 
@@ -126,4 +126,4 @@ const page = () => {
     )
 }
 
-export default page
+export default LoginPage
