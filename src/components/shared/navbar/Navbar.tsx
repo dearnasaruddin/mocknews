@@ -65,11 +65,11 @@ const Navbar = () => {
                   Categories
                 </NavigationMenuTrigger>
 
-                <NavigationMenuContent className='px-0'>
+                <NavigationMenuContent className='px-0 left-1/2 -translate-x-4/5'>
                   <ul className='text-gray-600 dark:text-gray-300 rounded-md'>
 
-                    {categories?.map((category) => (
-                      <li><NavigationMenuLink key={category}>
+                    {categories?.map((category, index) => (
+                      <li key={index}><NavigationMenuLink >
                         <Link href={`/news/${category.toLowerCase()}`} className='px-4'>{category}</Link>
                       </NavigationMenuLink></li>
                     ))}
